@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subhajit Majee| Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) {}
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var theme = saved || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+</head>
+
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" type="button" aria-label="Toggle dark and light mode">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <img src="photo.png" alt="Photo of Subhajit Majee" class="pic">
+      <h1>Subhajit Majee</h1>
+      <p>Student|Programmer|Athlete</p>
+    </section>
+
+    <section id="blog">
+      <h2>About Me</h2>
+      <p>Hi, I'm Subhajit Majee, a Computer Science and Engineering student from India. I'm a Linux enthusiast and a part-time athlete. I like automation, shell scripting, and systems optimization, and I try to bring the same endurance and discipline to my code that I bring to training. I'm building custom tools, tuning my own computing setup, and contributing to open-source projects. I'd like to collaborate with developers around the world on hard engineering problems and give back to the open-source community.</p>     
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <article class="skill">
+        <h3><a href="#">Languages:</a></h3>
+        <p class=" big">Rust, Java, C, Python</p>
+      </article>
+
+      <article class="skill">
+        <h3><a href="#">Web Development:</a></h3>
+        <p class="meta big">MongoDB, Express.js, React, Node.js (MERN Stack)</p>
+      </article>
+
+      <article class="skill">
+        <h3><a href="#">Core Fundamentals:</a></h3>
+        <p class="meta big">Data Structures & Algorithms (DSA)</p>
+      </article>
+    </section>
+
+  
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:subhajitmajee@mail.com">subhajitmajee@mail.com</a></p>
+      <p>Github: <a href="https://github.com/siuubhajit">siuubhajit</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/siuubhajit/">Subhajit Majee</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Subhajit Majee</p>
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById("theme-toggle");
+
+    toggle.addEventListener("click", function () {
+      var root = document.documentElement;
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>
