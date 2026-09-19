@@ -13,7 +13,7 @@ A one-page personal site built with plain HTML and CSS. It has a light theme and
 ```
 ## Page sections
 
-- Hero: Name and a one-line tagline, with room for a profile photo above the heading.
+- Hero: Name and profile photo.
 - About Me: A short introduction.
 - Skills: Cards for languages, web development, and core fundamentals.
 - Contact: Email, GitHub, and LinkedIn links.
