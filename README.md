@@ -1,6 +1,6 @@
 # Portfolio Website(Internship project for Synent Technologies)
 
-A one-page personal site built with plain HTML and CSS. It has a light theme and a dark theme, and the page colors are modeled on the gruvbox palette used by The Linux Cast website. There is no framework and no build step. The only JavaScript is the small script that handles the theme toggle.
+A one-page personal site built with plain HTML and CSS. It has a light theme and a dark theme. There is no framework and no build step. The only JavaScript is the small script that handles the theme toggle.
 
 ## Files
 
