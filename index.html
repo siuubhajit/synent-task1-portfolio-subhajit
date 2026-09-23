@@ -17,11 +17,17 @@
 </head>
 
 
+
+
+
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <header>
     <div class="container">
       <nav>
-        <ul>
+        <button id="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+        <ul id="nav-menu">
           <li><a href="index.html" data-nav="home">Home</a></li>
           <li><a href="#blog" data-nav="blog">Blog</a></li>
           <li><a href="#skills" data-nav="skills">Skills</a></li>
@@ -33,7 +39,10 @@
     </div>
   </header>
 
-  <main class="container">
+
+
+
+  <main class="container" id="main-content">
 
     <section class="hero">
       <img src="photo.png" alt="Photo of Subhajit Majee" class="pic">
@@ -54,6 +63,10 @@
         <p class=" big">Rust, Java, C, Python</p>
       </article>
 
+
+
+
+
       <article class="skill">
         <h3><a href="#">Web Development:</a></h3>
         <p class="meta big">MongoDB, Express.js, React, Node.js (MERN Stack)</p>
@@ -67,6 +80,9 @@
 
     <section id="projects">
       <h2>Projects</h2>
+
+
+
 
       <article class="project">
         <h3><a href="https://github.com/siuubhajit/Pustakeum" target="_blank" rel="noopener">Pustakeum</a></h3>
@@ -92,6 +108,7 @@
         <p class="tags">Embedded · ESP32</p>
       </article>
     </section>
+
 
     <section id="contact">
       <h2>Contact</h2>
@@ -120,7 +137,9 @@
       try { localStorage.setItem("theme", next); } catch (e) {}
     });
 
-    // Highlight the nav link for the section currently in view.
+    
+
+    
     var sections = document.querySelectorAll("main section[id]");
     var navLinks = document.querySelectorAll("nav a[data-nav]");
 
@@ -136,12 +155,32 @@
 
     sections.forEach(function (section) { observer.observe(section); });
 
-    // Show a back-to-top button once the visitor scrolls past the hero.
+    // hb 
+
+    var navToggle = document.getElementById("nav-toggle");
+    var navMenu = document.getElementById("nav-menu");
+
+    navToggle.addEventListener("click", function () {
+      var open = navMenu.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    
     var backToTop = document.getElementById("back-to-top");
 
     window.addEventListener("scroll", function () {
       backToTop.classList.toggle("visible", window.scrollY > 400);
     });
+
+
+
 
     backToTop.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -48,6 +48,23 @@ a:hover {
   outline-offset: 2px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--bg-card);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  z-index: 10;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 
 .container {
   max-width: 900px;
@@ -84,6 +101,21 @@ nav a.active {
   text-decoration: underline;
 }
 
+
+
+
+#nav-toggle {
+  display: none;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  order: -1;
+}
+
 #theme-toggle {
   background: var(--bg-card);
   color: var(--text);
@@ -98,7 +130,10 @@ nav a.active {
   border-color: var(--accent);
 }
 
-/* Hero */
+
+
+
+
 .hero {
   text-align: center;
   padding: 3rem 0 2rem;
@@ -187,6 +222,22 @@ footer {
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 1.8rem;
+  }
+
+  #nav-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    order: 1;
+  }
+
+  nav ul.open {
+    display: flex;
   }
 }
 
