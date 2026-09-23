@@ -22,11 +22,11 @@
     <div class="container">
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html" data-nav="home">Home</a></li>
+          <li><a href="#blog" data-nav="blog">Blog</a></li>
+          <li><a href="#skills" data-nav="skills">Skills</a></li>
+          <li><a href="#projects" data-nav="projects">Projects</a></li>
+          <li><a href="#contact" data-nav="contact">Contact</a></li>
         </ul>
         <button id="theme-toggle" type="button" aria-label="Toggle dark and light mode">◐</button>
       </nav>
@@ -108,6 +108,8 @@
     </div>
   </footer>
 
+  <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+
   <script>
     var toggle = document.getElementById("theme-toggle");
 
@@ -116,6 +118,33 @@
       var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+
+    // Highlight the nav link for the section currently in view.
+    var sections = document.querySelectorAll("main section[id]");
+    var navLinks = document.querySelectorAll("nav a[data-nav]");
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function (link) {
+            link.classList.toggle("active", link.getAttribute("data-nav") === entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-40% 0px -50% 0px" });
+
+    sections.forEach(function (section) { observer.observe(section); });
+
+    // Show a back-to-top button once the visitor scrolls past the hero.
+    var backToTop = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", function () {
+      backToTop.classList.toggle("visible", window.scrollY > 400);
+    });
+
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 

@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -72,6 +76,12 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+nav a.active {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 #theme-toggle {
@@ -178,4 +188,32 @@ footer {
   .hero h1 {
     font-size: 1.8rem;
   }
+}
+
+#back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  border-color: var(--accent);
 }
