@@ -7,6 +7,9 @@
   --border: #d5c4a1;
 }
 
+
+
+
 :root[data-theme="dark"] {
   --bg: #282828;
   --bg-card: #3c3836;
@@ -61,6 +64,9 @@ a:hover {
   transition: top 0.2s;
 }
 
+
+
+
 .skip-link:focus {
   top: 1rem;
 }
@@ -76,6 +82,13 @@ a:hover {
 header {
   border-bottom: 1px solid var(--border);
 }
+
+
+
+
+
+
+
 
 nav {
   display: flex;
@@ -100,9 +113,6 @@ nav a.active {
   font-weight: 600;
   text-decoration: underline;
 }
-
-
-
 
 #nav-toggle {
   display: none;
@@ -132,8 +142,6 @@ nav a.active {
 
 
 
-
-
 .hero {
   text-align: center;
   padding: 3rem 0 2rem;
@@ -143,6 +151,8 @@ nav a.active {
   margin: 0 0 0.5rem;
   font-size: 2.5rem;
 }
+
+
 
 .hero p {
   margin: 0;
@@ -162,6 +172,9 @@ main section {
   margin-bottom: 2.5rem;
 }
 
+
+
+
 main h2 {
   border-bottom: 2px solid var(--accent);
   padding-bottom: 0.3rem;
@@ -180,6 +193,10 @@ main h2 {
   margin: 0 0 0.25rem;
 }
 
+
+
+
+
 .skill .big {
   margin: 0 0 0.5rem;
   font-size: 0.85rem;
@@ -197,6 +214,9 @@ main h2 {
 .project h3 {
   margin: 0 0 0.35rem;
 }
+
+
+
 
 .project p {
   margin: 0 0 0.35rem;
@@ -241,6 +261,9 @@ footer {
   }
 }
 
+
+
+
 #back-to-top {
   position: fixed;
   right: 1.25rem;
@@ -264,6 +287,9 @@ footer {
   pointer-events: auto;
   transform: translateY(0);
 }
+
+
+
 
 #back-to-top:hover {
   border-color: var(--accent);
