@@ -1,4 +1,4 @@
-# Portfolio Website(Internship project for Synent Technologies)
+# Portfolio Website
 
 A one-page personal site built with plain HTML and CSS. It has a light theme and a dark theme. There is no framework and no build step. The only JavaScript is the small script that handles the theme toggle.
 
